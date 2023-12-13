@@ -1,4 +1,4 @@
-package goorm.strudentAPI.student;
+package goorm.studentAPI.student;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package goorm.strudentAPI;
+package goorm.studentAPI;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

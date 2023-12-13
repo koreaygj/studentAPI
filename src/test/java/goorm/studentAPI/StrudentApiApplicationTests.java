@@ -1,4 +1,4 @@
-package goorm.strudentAPI;
+package goorm.studentAPI;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
