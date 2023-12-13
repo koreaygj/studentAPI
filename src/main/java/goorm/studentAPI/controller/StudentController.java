@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -57,6 +58,14 @@ public class StudentController {
   public ApiResponse<List<Student>> searchAllStudents() {
     List<Student> result = studentRepository.findAll();
     result.sort((a, b) -> a.getGrade() - b.getGrade());
+    return makeResponse(result);
+  }
+
+  @ResponseBody
+  @GetMapping("/searchByGrade")
+  public ApiResponse<List<Student>> searchByGrade(@RequestParam int grade) {
+    List<Student> result = studentRepository.findAll().stream()
+        .filter((student -> student.getGrade() == grade)).collect(Collectors.toList());
     return makeResponse(result);
   }
 
