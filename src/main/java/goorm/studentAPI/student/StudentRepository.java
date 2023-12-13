@@ -10,6 +10,9 @@ public class StudentRepository {
   private static HashMap<Long, Student> store = new HashMap<>();
   private static final StudentRepository instance = new StudentRepository();
 
+  public static StudentRepository getInstance(){
+    return instance;
+  }
   public Student save(Student student) {
     student.setId(++sequence);
     store.put(student.getId(), student);
