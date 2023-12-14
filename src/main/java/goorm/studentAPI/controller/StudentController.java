@@ -1,6 +1,5 @@
 package goorm.studentAPI.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import goorm.studentAPI.response.ApiResponse;
 import goorm.studentAPI.response.customException.CustomException;
 import goorm.studentAPI.response.customException.ErrorCode;
@@ -9,26 +8,20 @@ import goorm.studentAPI.response.data.Metadata;
 import goorm.studentAPI.response.data.Status;
 import goorm.studentAPI.student.Student;
 import goorm.studentAPI.student.StudentRepository;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @Controller
-@RequestMapping("/students")
+@RequestMapping("/students/")
 public class StudentController {
 
   StudentRepository studentRepository = StudentRepository.getInstance();
